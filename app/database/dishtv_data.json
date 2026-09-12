@@ -1,0 +1,214 @@
+{
+    "products": [
+        {
+            "_id": {
+                "$oid": "66e16f1a1b4e2a7812000001"
+            },
+            "productname": "Dish HD (DishNXT HD Set-Top Box)",
+            "descriptoin": "High-Definition digital satellite set-top box offering 1080i resolution, digital audio, and access to hundreds of channels, including 190+ free-to-air channels viewable without monthly recharge.",
+            "feautures": [
+                "True HD Quality (1080i) with 5x better picture clarity",
+                "5.1 Surround Sound digital audio output",
+                "190+ channels available to watch without recharge",
+                "Multilingual audio selection and channel swap support",
+                "Free doorstep installation within 24 hours",
+                "1-Year Comprehensive Warranty"
+            ],
+            "pricing": "₹1,355 (Standalone HD Set-Top Box offer) / ₹1,599 (Includes HD Box, 3 months Flexi Pack, Free Amazon Prime Lite & 1-Year Warranty)",
+            "sourceurl": "https://www.dishtv.in/landing-page/190-channels-without-recharge-hsm.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f1a1b4e2a7812000002"
+            },
+            "productname": "DishSMRT HUB",
+            "descriptoin": "Android TV-powered connected hybrid Set-Top Box that transforms televisions into Smart TVs by combining linear satellite DTH broadcasting, streaming apps, and Google Play Store gaming.",
+            "feautures": [
+                "Android TV operating system with Google Play Store support",
+                "Built-in Google Assistant with Bluetooth Voice Remote",
+                "Built-in Chromecast and Miracast screen sharing",
+                "Dual connectivity: Satellite dish cable + Wi-Fi / Ethernet",
+                "1GB RAM and 8GB internal flash storage",
+                "Two USB ports supporting external recording up to 500 GB (NTFS/FAT32)",
+                "Support for up to 5 customized user profiles and parental lock"
+            ],
+            "pricing": "₹1,699/- (New DishSMRT Hub connection / upgrade offer)",
+            "sourceurl": "https://www.dishtv.in/products/dishsmrt-hub-antenna-2288.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f1a1b4e2a7812000003"
+            },
+            "productname": "DishTV SMART+ STB Dongle",
+            "descriptoin": "Compact plug-and-play USB hardware dongle that delivers live linear TV channels directly to Android TV and Google TV devices without needing a separate full-sized set-top box.",
+            "feautures": [
+                "Delivers linear DTH channels to Android TV and Google TV devices",
+                "Compact form factor (63 x 73 x 20 mm)",
+                "Hardware specs: 32-bit CPU, 128MB RAM, 8MB Flash memory",
+                "Single TV remote control for both linear channels and streaming apps",
+                "Channel favorites, viewing reminders, and parental controls",
+                "Includes STB Dongle, USB Cable, and 12V 1A power adapter"
+            ],
+            "pricing": "Available as a hardware add-on device via plan selection",
+            "sourceurl": "https://www.dishtv.in/products/stb-dongle/android-tv-box.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f1a1b4e2a7812000004"
+            },
+            "productname": "DishTV Smart+ TV Key",
+            "descriptoin": "Integrated set-top-box-free streaming and DTH technology developed in partnership with Samsung, embedding satellite reception and OTT entertainment directly into compatible Samsung Smart TVs.",
+            "feautures": [
+                "Clutter-free entertainment with no external set-top box or extra cabling required",
+                "1 month complimentary access to 230+ TV channels and 19 OTT apps",
+                "Free doorstep installation and activation (Rs. 500 charge applies only if outdoor dish antenna is needed)",
+                "Subsequent recharge discounts up to 48%",
+                "Single remote controls both TV display and DTH channel navigation",
+                "Integrated access to VZY OTT aggregation platform"
+            ],
+            "pricing": "Complimentary 30-day access with compatible Samsung Smart TVs (₹500 for antenna if required)",
+            "sourceurl": "https://www.dishtv.in/products/tvkey.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f1a1b4e2a7812000005"
+            },
+            "productname": "VZY Smart TV (Inbuilt STB TV)",
+            "descriptoin": "All-in-One Smart Television featuring built-in DishTV satellite reception hardware, Google TV platform, and multi-app OTT aggregation.",
+            "feautures": [
+                "Inbuilt satellite STB tuner (connect dish cable directly without external STB)",
+                "Google TV (Android 14) with Play Store and hands-free voice control",
+                "4K QLED / Mini-LED VA panels with 350 Nits peak brightness",
+                "Dolby Vision, HDR10, and Dolby Atmos with 50W Box speakers and tweeter",
+                "Auto Low Latency Mode (ALLM), MEMC motion smoothing, and built-in Karaoke",
+                "36 Months entertainment subscription worth up to ₹30,000 included",
+                "3-year warranty (2+1 years) and free technician installation"
+            ],
+            "pricing": "Varies by screen size/model; eligible for ₹300 discount with promo code VZY300 plus ₹10K content benefits",
+            "sourceurl": "https://www.dishtv.in/products/vzy-tv.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f1a1b4e2a7812000006"
+            },
+            "productname": "DishTV Universal Remote",
+            "descriptoin": "Universal remote control accessory designed to operate both the DishTV set-top box and television set using a single handheld unit.",
+            "feautures": [
+                "Dual-control capability for TV and DishTV STB",
+                "Infrared learning keys for power and source switching",
+                "Dedicated navigation and channel guide buttons",
+                "Ergonomic button layout"
+            ],
+            "pricing": "Available as an official replacement/spare accessory via customer service",
+            "sourceurl": "https://www.dishtv.in/"
+        }
+    ],
+    "packages_and_recharges": [
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000007"
+            },
+            "packname": "Flexi HD Pack",
+            "descriptoin": "Flagship DishTV high-definition subscription pack combining standard definition channels with popular high-definition feeds and swappable flexi channels.",
+            "feautures": [
+                "174 SD channels + 5 HD channels",
+                "Key channels: Colors HD, Zee TV HD, Sony Entertainment Television HD, Sony SAB HD, Star Plus HD",
+                "Full flexibility to switch and swap channels anytime",
+                "Crystal-clear 1080i HD picture quality and 5.1 surround sound audio"
+            ],
+            "pricing": "₹191*/month (Excluding applicable taxes; included for 3 months in the ₹1,355 / ₹1,599 new connection offers)",
+            "sourceurl": "https://www.dishtv.in/landing-page/190-channels-without-recharge-hsm.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000008"
+            },
+            "packname": "Value Saver Starter Pack",
+            "descriptoin": "Entry-level base plan designed to provide uninterrupted viewing of essential general entertainment, news, and free-to-air channels at a minimal cost.",
+            "feautures": [
+                "Access to 190+ free-to-air and essential channels",
+                "Customizable with broadcaster bouquets and single à la carte channels",
+                "Full subscriber control over monthly budget and active channels",
+                "Zero technician visit charges with Lifetime Free Service promo"
+            ],
+            "pricing": "₹99/month onwards (*Applicable taxes and NCF extra)",
+            "sourceurl": "https://www.dishtv.in/landing-page/190-channels-without-recharge-hsm.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000009"
+            },
+            "packname": "Super Family (Flexi Pack 249)",
+            "descriptoin": "Comprehensive family entertainment pack spanning movie, serial, infotainment, kids, and news channels across national networks.",
+            "feautures": [
+                "5 Flexi Channels included from day one with on-demand swapping",
+                "Movie channels: &flix HD, &pictures HD, &prive HD, Sony MAX HD, Star Gold HD, Zee Bollywood, Colors Cineplex HD",
+                "Entertainment: Star Plus HD, Zee TV HD, Colors HD, Sony Entertainment Television HD, Sony SAB HD, Zee Punjabi",
+                "Infotainment & News: Discovery HD, India Today, WION, Zee News, News18 networks",
+                "Kids & Music: Nick HD+, Pogo, Sony YAY, Zing"
+            ],
+            "pricing": "₹249/month (*Applicable taxes and NCF extra)",
+            "sourceurl": "https://www.dishtv.in/manage-my-packs/value-saver-packs.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000010"
+            },
+            "packname": "Bharat Combo",
+            "descriptoin": "Curated national combo package offering a balanced assortment of standard definition general entertainment and news channels.",
+            "feautures": [
+                "130 Channels included",
+                "Balanced mix of popular Hindi GEC, regional news, music, and devotional channels",
+                "Standard Definition quality with stable satellite signal",
+                "Compatible with instant online recharge portal"
+            ],
+            "pricing": "₹130/month (*Applicable taxes and NCF extra)",
+            "sourceurl": "https://www.dishtv.in/packs-channel/all-in-one.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000011"
+            },
+            "packname": "Swagat Combo",
+            "descriptoin": "Budget-friendly base combo pack curated by DishTV for households seeking essential Hindi entertainment, cinema, and current affairs.",
+            "feautures": [
+                "130 Channels included",
+                "Staple Hindi general entertainment and classic cinema channels",
+                "Eligible for genre-based add-ons and broadcaster bouquets",
+                "Immediate pack activation upon recharge"
+            ],
+            "pricing": "₹130/month (*Applicable taxes and NCF extra)",
+            "sourceurl": "https://www.dishtv.in/packs-channel/all-in-one.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000012"
+            },
+            "packname": "South Language Regional Packs & HD Upgrade",
+            "descriptoin": "Regional language packs for South Indian states covering Tamil, Telugu, Kannada, and Malayalam programming, with add-on HD channel upgrades.",
+            "feautures": [
+                "Curated Tamil, Telugu, Kannada, and Malayalam language channels",
+                "Upgrade to HD quality for regional networks",
+                "Access to regional sports networks and movie channels",
+                "Can be subscribed on top of any primary base pack"
+            ],
+            "pricing": "₹42 + Tax = ₹50/month each (HD Upgrade / Regional pack)",
+            "sourceurl": "https://www.dishtv.in/south-packs.html"
+        },
+        {
+            "_id": {
+                "$oid": "66e16f2b1b4e2a7812000013"
+            },
+            "packname": "Network Capacity Fee (NCF) Standard Recharge Tier",
+            "descriptoin": "Mandatory TRAI regulatory network distribution capacity charge for primary and secondary DTH connections on DishTV.",
+            "feautures": [
+                "Includes capacity for first 200 channels (FTA + Pay channels, excluding mandatory DD channels)",
+                "One HD channel counts as two SD channels towards network capacity limit",
+                "Flat discounted NCF rate for secondary/Multi-TV connections (up to 3 extra connections)",
+                "Enables reception of all unencrypted Free-to-Air (FTA) channels"
+            ],
+            "pricing": "₹130 + Taxes (₹153.40 incl. taxes)/month for first 200 channels; ₹50 + Taxes flat for Multi-TV",
+            "sourceurl": "https://www.dishtv.in/content/dam/dishtv-aem-web-platform/footer-pages/NCF.pdf"
+        }
+    ]
+}
