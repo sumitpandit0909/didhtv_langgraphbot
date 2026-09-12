@@ -6,8 +6,10 @@ DishBot is an enterprise-grade, router-based conversational AI system built usin
 
 ## 🏗️ System Architecture Flow
 
-The entire application runs on a centralized LangGraph state-machine with persistent session memory:
+### 1. Compiled LangGraph State Machine
+![DishBot LangGraph State Machine Architecture](dishbot_graph.png)
 
+### 2. End-to-End Execution Flow (Data & Actions)
 ```mermaid
 flowchart TD
     User([User Request]) --> API[FastAPI /chat Endpoint]
