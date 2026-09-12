@@ -9,38 +9,6 @@ DishBot is an enterprise-grade, router-based conversational AI system built usin
 ### 1. Compiled LangGraph State Machine
 ![DishBot LangGraph State Machine Architecture](dishbot_graph.png)
 
-### 2. End-to-End Execution Flow (Data & Actions)
-```mermaid
-flowchart TD
-    User([User Request]) --> API[FastAPI /chat Endpoint]
-    API --> Memory[LangGraph Checkpointer / Thread Memory]
-    Memory --> Supervisor[Supervisor Router Node\n- Chain-of-Thought Intent Classifier]
-
-    Supervisor -->|product_inquiry| ProdAgent[Product Knowledge Node\n- Autonomous ReAct Agent\n- Live MongoDB Catalog Tools]
-    Supervisor -->|company_info| RAGPipeline[TechChefz RAG Node\n- Query Transformation\n- Vector Search Top-8\n- FlashRank Cross-Encoder Reranker\n- Corrective Confidence Gate]
-    Supervisor -->|recharge_request| RechargeNode[Recharge Action Node\n- Dynamic MongoDB Price Resolution\n- Pydantic Slot-Filling\n- Human-in-the-Loop Approval]
-    Supervisor -->|history_check| HistoryNode[History Node\n- Live MongoDB User History Query]
-    Supervisor -->|technical_troubleshoot| TroubleshootNode[Troubleshooting Node (Bonus)\n- Step-by-Step Hardware Diagnostics]
-    Supervisor -->|escalate_support| EscalateNode[Escalation Node\n- Ticket Generation #XYZ\n- Sentiment & Repeat Tracker]
-    Supervisor -->|general_chat| ChatNode[General Chat Node]
-
-    RechargeNode -->|Awaiting Approval| Pause([Prompt User: Yes/No])
-    RechargeNode -->|Approved| Exec[Execute Payment & Log to MongoDB]
-
-    ProdAgent --> Format[Format Response + Official Web Citation]
-    RAGPipeline --> Format
-    HistoryNode --> Format
-    TroubleshootNode --> Format
-    EscalateNode --> Format
-    ChatNode --> Format
-    Exec --> Format
-
-    Format --> Log[Log Interaction to MongoDB chats_collection]
-    Log --> End([Return JSON Response to Client])
-```
-
----
-
 ## 📂 Codebase Structure & File-by-File Breakdown
 
 ```text
