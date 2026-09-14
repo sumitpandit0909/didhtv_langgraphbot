@@ -175,6 +175,7 @@ dependencies = [
     { name = "langchain-openrouter" },
     { name = "langchain-text-splitters" },
     { name = "langgraph" },
+    { name = "langgraph-supervisor" },
     { name = "motor" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
@@ -195,6 +196,7 @@ requires-dist = [
     { name = "langchain-openrouter", specifier = ">=0.2.8" },
     { name = "langchain-text-splitters", specifier = ">=1.1.2" },
     { name = "langgraph", specifier = ">=1.2.11" },
+    { name = "langgraph-supervisor", specifier = ">=0.0.31" },
     { name = "motor", specifier = ">=3.7.1" },
     { name = "pydantic", specifier = ">=2.13.5" },
     { name = "pydantic-settings", specifier = ">=2.15.0" },
@@ -1416,6 +1418,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/3f/ae/91446c1fffa04a2dc1f81afbfb5bfff3590452891a72bd9098a656ab2657/langgraph_sdk-0.4.4.tar.gz", hash = "sha256:4e651ffa09de695681579396375377bdde23bedbc8e35b070e615cbd5af7da8b", size = 345789, upload-time = "2026-08-27T21:25:22.593Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/43/d5/2ad7f3a835c6fcebf58b6669552536ecd52d2dfe4cf49c6c36648fd83572/langgraph_sdk-0.4.4-py3-none-any.whl", hash = "sha256:39afe416c91742925e6f8a93715f566d499b36e1b636b804a4ffe3190e4f4e64", size = 162270, upload-time = "2026-08-27T21:25:21.072Z" },
+]
+
+[[package]]
+name = "langgraph-supervisor"
+version = "0.0.31"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "langgraph" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/15/a0/6e9286a2e4a9ed8c9d299d0131b323cae376316a63286d2880031bb01082/langgraph_supervisor-0.0.31.tar.gz", hash = "sha256:0f71d5098fa1ac274423eff08750345450045c1e0dd2480ab7f3e5c1848f6016", size = 21910, upload-time = "2025-11-19T18:34:29.795Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1d/7f/bb73da8db36c96f32cdd0292f2cd75e2d671150b0d177575da560ad994a1/langgraph_supervisor-0.0.31-py3-none-any.whl", hash = "sha256:6bbe5311f536d38779766cc6f074005e3e892d37edbfd875731923221daa1889", size = 16505, upload-time = "2025-11-19T18:34:28.481Z" },
 ]
 
 [[package]]

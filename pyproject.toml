@@ -15,6 +15,7 @@ dependencies = [
     "langchain-openrouter>=0.2.8",
     "langchain-text-splitters>=1.1.2",
     "langgraph>=1.2.11",
+    "langgraph-supervisor>=0.0.31",
     "motor>=3.7.1",
     "pydantic>=2.13.5",
     "pydantic-settings>=2.15.0",

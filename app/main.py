@@ -4,6 +4,7 @@ from datetime import datetime
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_core.messages import HumanMessage
+from langgraph.types import Command
 
 from app.core.config import settings
 from app.models import ChatRequest, ChatResponse
@@ -52,25 +53,42 @@ async def chat_endpoint(request: ChatRequest):
             }
         }
 
-        # 2. Construct input state
-        input_state = {
-            "messages": [HumanMessage(content=request.message)],
-            "user_id": request.user_id,
-            "conversation_id": request.conversation_id
-        }
+        # 2. Check if graph is currently paused on an interrupt
+        current_state = await dishbot_graph.aget_state(config)
 
-        # 3. Asynchronously execute the graph
-        output_state = await dishbot_graph.ainvoke(input_state, config=config)
-
-        # 4. Extract last AI response and citation source
-        raw_response = output_state["messages"][-1].content
-        if isinstance(raw_response, list):
-            bot_response = "\n".join([p.get("text", str(p)) if isinstance(p, dict) else str(p) for p in raw_response])
+        if current_state.next:
+            # Graph is paused at an interrupt (e.g. recharge confirmation) -> Resume execution with user response!
+            output_state = await dishbot_graph.ainvoke(
+                Command(resume=request.message),
+                config=config
+            )
         else:
-            bot_response = str(raw_response)
-        source_url = output_state.get("source_url")
+            # Normal conversation turn
+            input_state = {
+                "messages": [HumanMessage(content=request.message)],
+                "user_id": request.user_id,
+                "conversation_id": request.conversation_id
+            }
+            output_state = await dishbot_graph.ainvoke(input_state, config=config)
 
-        # 5. Persist interaction into MongoDB 'chats_collection'
+        # 3. Check if this step paused at a new interrupt
+        new_state = await dishbot_graph.aget_state(config)
+        source_url = None
+
+        if new_state.tasks and new_state.tasks[0].interrupts:
+            # Interrupted (e.g. waiting for recharge approval) -> return interrupt prompt
+            interrupt_val = new_state.tasks[0].interrupts[0].value
+            bot_response = str(interrupt_val)
+        else:
+            raw_response = output_state["messages"][-1].content
+            if isinstance(raw_response, list):
+                bot_response = "\n".join([p.get("text", str(p)) if isinstance(p, dict) else str(p) for p in raw_response])
+            else:
+                bot_response = str(raw_response)
+            if isinstance(output_state, dict):
+                source_url = output_state.get("source_url")
+
+        # 4. Persist interaction into MongoDB 'chats_collection'
         chat_log = {
             "conversation_id": request.conversation_id,
             "user_id": request.user_id,
@@ -81,7 +99,7 @@ async def chat_endpoint(request: ChatRequest):
         }
         await chats_collection.insert_one(chat_log)
 
-        # 6. Return response matching assignment schema
+        # 5. Return response matching assignment schema
         return ChatResponse(
             response=bot_response,
             source=source_url,

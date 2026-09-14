@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, Field
 from langchain_core.messages import AIMessage, SystemMessage
+from langgraph.types import interrupt
 
 from app.models import AgentState, RechargeSlots
 from app.database.connection import recharge_history_collection
@@ -151,7 +152,7 @@ async def recharge_node(state: AgentState) -> dict:
         }
 
     
-    #  Human-in-the-Loop Confirmation Gate
+    #  Human-in-the-Loop Confirmation Gate (Native LangGraph Interrupt)
     # Both package and amount are resolved from MongoDB!
    
     confirmation_prompt = (
@@ -159,8 +160,33 @@ async def recharge_node(state: AgentState) -> dict:
         f"Do you approve? (Yes/No)"
     )
 
-    return {
-        "messages": [AIMessage(content=confirmation_prompt)],
-        "recharge_slots": updated_slots,
-        "awaiting_recharge_confirmation": True
-    }
+    # Graph pauses right here and returns confirmation_prompt to client
+    user_decision = interrupt(confirmation_prompt)
+
+    # Execution resumes right here when user sends 'Yes' / 'No'
+    decision_str = str(user_decision).strip().lower()
+    if any(affirm in decision_str for affirm in ["yes", "approve", "confirm", "proceed", "y", "sure", "ok"]):
+        effective_user = updated_slots.user_id or state.user_id
+        record = await perform_recharge(
+            user_id=effective_user,
+            amount=updated_slots.amount,
+            package_name=updated_slots.package_name
+        )
+        success_response = (
+            f"✅ **Recharge Successful!**\n\n"
+            f"• **Transaction ID:** `{record['txn_id']}`\n"
+            f"• **User ID:** `{record['user_id']}`\n"
+            f"• **Package:** {record['package']}\n"
+            f"• **Amount Paid:** ₹{record['amount']}\n"
+            f"• **Status:** {record['status']}\n\n"
+            f"Your channels have been renewed. Thank you for choosing DishTV!"
+        )
+        return {
+            "messages": [AIMessage(content=success_response)],
+            "recharge_slots": RechargeSlots()
+        }
+    else:
+        return {
+            "messages": [AIMessage(content="❌ The recharge request has been cancelled. Let me know if you need help with anything else!")],
+            "recharge_slots": RechargeSlots()
+        }
