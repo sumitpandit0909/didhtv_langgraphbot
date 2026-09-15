@@ -39,7 +39,7 @@ class AgentState(BaseModel):
         "positive",
         "negative"
     ] = "neutral"
-    repititive_issue_counter:int=0
+    repetitive_issue_counter:int=0
 
     source_url:Optional[str]=None
 

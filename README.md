@@ -150,6 +150,15 @@ The REST API will be live at:
 * Swagger UI Docs: **`http://localhost:8000/docs`**
 * Health Check: **`http://localhost:8000/health`**
 
+### 5. Start the React Frontend
+In a new terminal, launch the modern React interface:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The interactive frontend will be live at: **`http://localhost:3000`** (or Vite default port).
+
 ---
 
 ## 🧪 Testing & Verification Scenarios
